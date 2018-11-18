@@ -48,19 +48,19 @@ elseif(strpos($text, "/datanascita") === 0)
 }
 elseif(strpos($text, "stefano") === 0)
 { 
-		$response = "znlsfn68m06d530e";
+		$response = "ZNLSFN68M06D530E";
 }
-elseif(strpos($text, "ZNLSFN68M06D530E") === 0)
+elseif(strpos($text, "silvia") === 0)
 {
-	$response = "I3XFY";
+	$response = "DRGSLV71H57D530D";
 }
-elseif(strpos($text, "/matteo") === 0)
+elseif(strpos($text, "matteo") === 0)
 {
-	$response = "IK3DVY";
+	$response = "ZNLMTT99B26D530W";
 }
-elseif(strpos($text, "/nicola") === 0)
+elseif(strpos($text, "nicola") === 0)
 {
-	$response = "IZ3ATV";
+	$response = "ZNLNCL03E08D530R";
 }
 elseif(strpos($text, "/xxxx") === 0)
 {	
@@ -89,12 +89,11 @@ else
 {
 	//exit;
 	//$response = "Comando non previsto. /help";
-	$response = strtolower($text);
+	//$response = strtolower($text);
 }
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
 // imposto la keyboard
-//$parameters["reply_markup"] = '{ "keyboard": [["web avena], ["web tomatico"], ["web casere"], ["web telva"], ["web fiere"]], "one_time_keyboard": false}';
 if(strpos($text, "/webcam") === 0 || strpos($text, "/codfiscale") === 0 || strpos($text, "/datanascita") === 0)
 {
 	$parameters["reply_markup"] = json_encode($keyboard, true);
