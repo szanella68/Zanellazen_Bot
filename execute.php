@@ -46,7 +46,7 @@ elseif(strpos($text, "/datanascita") === 0)
 					    ['text' =>  'nicola', 'callback_data' => '08-05-2003']]]];
         $response = "scrivi il nome per avere la data di nascita";
 }
-elseif(strpos($text, "/stefano") === 0)
+elseif(strpos($text, "stefano") === 0)
 { 
 	$response = "IU3FCM";
 }
@@ -87,8 +87,8 @@ elseif(strpos($text, "/webcam") === 0)
 }
 else 
 {
-	exit;
-	//$response = "Comando non previsto. /help";
+	//exit;
+	$response = "Comando non previsto. /help";
 }
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
