@@ -32,11 +32,11 @@ elseif(strpos($text, "/help") === 0)
 }
 elseif(strpos($text, "/codfiscale") === 0)
 { 
-	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano', 'callback_data' => 'ZNLSFN68M06D530E'],
+	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano', 'callback_data' => 'myCallbackText'],
 					    ['text' =>  'silvia', 'callback_data' => 'DRGSLV71H57D530D'],
 					    ['text' =>  'matteo', 'callback_data' => 'ZNLMTT99B26D530W'],
 					    ['text' =>  'nicola', 'callback_data' => 'ZNLNCL03E08D530R']]]];
-        $response = "scrivi il nome per avere il codice fiscale";
+        //$response = "scrivi il nome per avere il codice fiscale";
 }
 elseif(strpos($text, "/datanascita") === 0)
 { 
@@ -88,7 +88,8 @@ elseif(strpos($text, "/webcam") === 0)
 else 
 {
 	//exit;
-	$response = "Comando non previsto. /help";
+	//$response = "Comando non previsto. /help";
+	$response = $text;
 }
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
