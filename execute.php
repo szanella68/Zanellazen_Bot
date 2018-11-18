@@ -43,6 +43,7 @@ else
 }
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
-// imposto la keyboard
-//$parameters["reply_markup"] = '{ "keyboard": [["Il mio nome"], ["Il mio cognome"], ["Il mio paese"], ["Il mio lavoro"]], "one_time_keyboard": false}';
+// imposto la inline keyboard
+$keyboard = ['inline_keyboard' => [[['text' =>  'web tomatico', 'url' => 'http://www.arifeltre.it/webcam/avena.jpg']]]];
+$parameters["reply_markup"] = json_encode($keyboard, true);
 echo json_encode($parameters);
