@@ -36,15 +36,15 @@ elseif(strpos($text, "/codfiscale") === 0)
 					    ['text' =>  'silvia', 'callback_data' => 'DRGSLV71H57D530D'],
 					    ['text' =>  'matteo', 'callback_data' => 'ZNLMTT99B26D530W'],
 					    ['text' =>  'nicola', 'callback_data' => 'ZNLNCL03E08D530R']]]];
-        //$response = "scrivi il nome per avere il codice fiscale";
+        $response = "seleziona il nome per avere il codice fiscale";
 }
 elseif(strpos($text, "/datanascita") === 0)
 { 
-	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano', 'callback_data' => '06-08-1968'],
+	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano', 'callback_data' => 'stefano'],
 					    ['text' =>  'silvia', 'callback_data' => '17-06-1971'],
 					    ['text' =>  'matteo', 'callback_data' => '26-02-1999'],
 					    ['text' =>  'nicola', 'callback_data' => '08-05-2003']]]];
-        $response = "scrivi il nome per avere la data di nascita";
+        $response = "seleziona il nome per avere la data di nascita";
 }
 elseif(strpos($text, "stefano") === 0)
 { 
