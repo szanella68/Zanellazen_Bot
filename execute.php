@@ -21,7 +21,7 @@ if(strpos($text, "/start") === 0 || $text=="ciao")
 {
 	$response = "Ciao $firstname, benvenuto!";
 }
-elseif($text=="/il mio nome")
+elseif($text=="il mio nome")
 {
 	$response = "Stefano";
 }
