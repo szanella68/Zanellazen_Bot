@@ -32,7 +32,7 @@ elseif($text=="il mio paese")
 elseif($text=="/webcam")
 {
 	$keyboard = ['inline_keyboard' => [[['text' =>  'web avena', 'url' => 'http://www.arifeltre.it/webcam/avena.jpg'],['text' =>  'web buse', 'url' => 'http://www.arifeltre.it/Cam9/webcam.jpg']]]];
-       
+        $response = "scegli la webcam";
 }
 elseif($text=="il mio cognome")
 {
