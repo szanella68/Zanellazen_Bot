@@ -39,7 +39,7 @@ elseif($text=="il mio cognome")
 }
 else
 {
-	$response = "Non so cosa vuoi";
+	$response = "ovvero";
 }
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
