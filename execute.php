@@ -20,7 +20,10 @@ $response = '';
 if(strpos($text, "/start") === 0 || $text=="ciao")
 {
 	$response = "Ciao , benvenuto! Vai con /help per elenco opzioni";
+	$parameters = array('chat_id' => $chatId, "text" => $text);
+	$parameters["method"] = "sendMessage";
 	$parameters["reply_markup"] = '{ "keyboard": [["uno"], ["due"], ["tre"], ["quattro"]], "one_time_keyboard": false}';
+	echo json_encode($parameters);
 
 }
 elseif(strpos($text, "/elenco") === 0)
