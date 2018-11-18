@@ -89,7 +89,7 @@ else
 {
 	//exit;
 	//$response = "Comando non previsto. /help";
-	$response = $text;
+	$response = strtolower($text);
 }
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
