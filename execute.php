@@ -32,7 +32,7 @@ elseif(strpos($text, "/help") === 0)
 }
 elseif(strpos($text, "/codfiscale") === 0)
 { 
-	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano', 'callback_data' => 'myCallbackText'],
+	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano', 'callback_data' => 'stefano'],
 					    ['text' =>  'silvia', 'callback_data' => 'DRGSLV71H57D530D'],
 					    ['text' =>  'matteo', 'callback_data' => 'ZNLMTT99B26D530W'],
 					    ['text' =>  'nicola', 'callback_data' => 'ZNLNCL03E08D530R']]]];
@@ -48,7 +48,7 @@ elseif(strpos($text, "/datanascita") === 0)
 }
 elseif(strpos($text, "stefano") === 0)
 { 
-	$response = "IU3FCM";
+		$response = "znlsfn68m06d530e";
 }
 elseif(strpos($text, "/silvia") === 0)
 {
