@@ -33,6 +33,7 @@ elseif($text=="/webcam")
 {
 	$keyboard = ['inline_keyboard' => [[['text' =>  'web avena', 'url' => 'http://www.arifeltre.it/webcam/avena.jpg'],['text' =>  'web buse', 'url' => 'http://www.arifeltre.it/Cam9/webcam.jpg']]]];
         $response = "scegli la webcam";
+	$parameters["reply_markup"] = json_encode($keyboard, true);
 }
 elseif($text=="il mio cognome")
 {
@@ -46,5 +47,5 @@ $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
 // imposto la inline keyboard
 //$keyboard = ['inline_keyboard' => [[['text' =>  'web avena', 'url' => 'http://www.arifeltre.it/webcam/avena.jpg'],['text' =>  'web buse', 'url' => 'http://www.arifeltre.it/Cam9/webcam.jpg']]]];
-$parameters["reply_markup"] = json_encode($keyboard, true);
+//$parameters["reply_markup"] = json_encode($keyboard, true);
 echo json_encode($parameters);
