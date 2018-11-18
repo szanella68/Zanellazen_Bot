@@ -27,12 +27,12 @@ elseif(strpos($text, "/elenco") === 0)
 }
 elseif(strpos($text, "/help") === 0)
 {
-	$response = "/help per questo help, /elenco per l'elenco soci, /webcam per l'elenco webcam, 
-	/codfiscale  per il codice fiscale, /datanascita per datanascita";
+	$response = "/help per questo help, /elenco per l'elenco famigliari, /codfiscale  per il codice fiscale,
+	/datanascita per le date di nascita, /webcam per l'elenco webcam,";
 }
 elseif(strpos($text, "/codfiscale") === 0)
 { 
-	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano'],
+	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano', 'callback_data' => 'ZNLSFN68M06D530E'],
 					    ['text' =>  'silvia', 'callback_data' => 'DRGSLV71H57D530D'],
 					    ['text' =>  'matteo', 'callback_data' => 'ZNLMTT99B26D530W'],
 					    ['text' =>  'nicola', 'callback_data' => 'ZNLNCL03E08D530R']]]];
@@ -40,7 +40,7 @@ elseif(strpos($text, "/codfiscale") === 0)
 }
 elseif(strpos($text, "/datanascita") === 0)
 { 
-	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano'],
+	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano','callback_data' => '06-08-1968'],
 					    ['text' =>  'silvia', 'callback_data' => '17-06-1971'],
 					    ['text' =>  'matteo', 'callback_data' => '26-02-1999'],
 					    ['text' =>  'nicola', 'callback_data' => '08-05-2003']]]];
@@ -50,7 +50,7 @@ elseif(strpos($text, "stefano") === 0)
 { 
 		$response = "znlsfn68m06d530e";
 }
-elseif(strpos($text, "/silvia") === 0)
+elseif(strpos($text, "ZNLSFN68M06D530E") === 0)
 {
 	$response = "I3XFY";
 }
@@ -95,7 +95,7 @@ $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
 // imposto la keyboard
 //$parameters["reply_markup"] = '{ "keyboard": [["web avena], ["web tomatico"], ["web casere"], ["web telva"], ["web fiere"]], "one_time_keyboard": false}';
-if(strpos($text, "/webcam") === 0||strpos($text, "/codfiscale") === 0||strpos($text, "/datanascita") === 0)
+if(strpos($text, "/webcam") === 0 || strpos($text, "/codfiscale") === 0 || strpos($text, "/datanascita") === 0)
 {
 	$parameters["reply_markup"] = json_encode($keyboard, true);
 }
