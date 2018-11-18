@@ -32,7 +32,7 @@ elseif(strpos($text, "/help") === 0)
 }
 elseif(strpos($text, "/codfiscale") === 0)
 { 
-	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano', 'callback_data' => 'stefano'],
+	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano'],
 					    ['text' =>  'silvia', 'callback_data' => 'DRGSLV71H57D530D'],
 					    ['text' =>  'matteo', 'callback_data' => 'ZNLMTT99B26D530W'],
 					    ['text' =>  'nicola', 'callback_data' => 'ZNLNCL03E08D530R']]]];
