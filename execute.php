@@ -20,6 +20,8 @@ $response = '';
 if(strpos($text, "/start") === 0 || $text=="ciao")
 {
 	$response = "Ciao , benvenuto! Vai con /help per elenco opzioni";
+	$parameters["reply_markup"] = '{ "keyboard": [["uno"], ["due"], ["tre"], ["quattro"]], "one_time_keyboard": false}';
+
 }
 elseif(strpos($text, "/elenco") === 0)
 {
