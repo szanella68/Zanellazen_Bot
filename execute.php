@@ -40,7 +40,7 @@ elseif(strpos($text, "/codfiscale") === 0)
 }
 elseif(strpos($text, "/datanascita") === 0)
 { 
-	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano', 'callback_data' => 'stefano'],
+	$keyboard = ['inline_keyboard' => [[['text' =>  'stefano'],
 					    ['text' =>  'silvia', 'callback_data' => '17-06-1971'],
 					    ['text' =>  'matteo', 'callback_data' => '26-02-1999'],
 					    ['text' =>  'nicola', 'callback_data' => '08-05-2003']]]];
