@@ -103,10 +103,11 @@ else
 	$response = "$$$";
 }
 if ($response == "$$$")
-{	
-	$response = strtolower($text);
-	$parameters = array('chat_id' => $chatId, "text" => $response);
-}
+{}
+else
+{
+$response = strtolower($text);
+$parameters = array('chat_id' => $chatId, "text" => $response);	
 $parameters["method"] = "sendMessage";
-
 echo json_encode($parameters);
+}
