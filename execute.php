@@ -8,6 +8,7 @@ if(!$update)
 $message = isset($update['message']) ? $update['message'] : "";
 $query = isset($update['callback_query']) ? $update['callback_query'] : "";
 $querymessage = isset($query['message']['text']) ? $query['message']['text'] : "";
+$queryid =  isset($query['id']) ? $query['id'] : "";
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
 $firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
@@ -20,12 +21,16 @@ $text = strtolower($text);
 header("Content-Type: application/json");
 $response = '';
 
+
 if(strpos($text, "/start") === 0 || $text=="ciao" || $text=="gino" )
 {
-	$response = "Ciao , benvenuto! Vai con /help per elenco opzioni";
-	$parameters = array('chat_id' => $chatId, "text" => $text);
-	$parameters["method"] = "sendMessage";
-	$parameters["reply_markup"] = '{ "keyboard": [["stefano"], ["silvia"], ["matteo"], ["nicola"]], "one_time_keyboard": false}';
+
+	//$response = "Ciao , benvenuto! Vai con /help per elenco opzioni";
+	//$parameters = array('chat_id' => $chatId, "text" => $text);
+	//$parameters["method"] = "sendMessage";
+	//$parameters["reply_markup"] = '{ "keyboard": [["stefano"], ["silvia"], ["matteo"], ["nicola"]], "one_time_keyboard": false}';
+	$parameters["method"] = "answerCallbackQuery";
+	$parameters = array('callback_query_id' => $queryid);
 	echo json_encode($parameters);
 	exit;
 }
