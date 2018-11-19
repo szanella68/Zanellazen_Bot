@@ -20,19 +20,16 @@ $text = trim($text);
 $text = strtolower($text);
 header("Content-Type: application/json");
 $response = '';
-
-
-if(strpos($text, "/start") === 0 || $text=="ciao" || $text=="gino" )
-{
-
-	//$response = "Ciao , benvenuto! Vai con /help per elenco opzioni";
-	//$parameters = array('chat_id' => $chatId, "text" => $text);
-	//$parameters["method"] = "sendMessage";
-	//$parameters["reply_markup"] = '{ "keyboard": [["stefano"], ["silvia"], ["matteo"], ["nicola"]], "one_time_keyboard": false}';
+$parameters = '';
 	$parameters["method"] = "answerCallbackQuery";
 	$parameters = array('callback_query_id' => $queryid);
 	echo json_encode($parameters);
-	exit;
+$parameters = '';
+
+if(strpos($text, "/start") === 0 || $text=="ciao" || $text=="gino" )
+{	
+	$response = "Ciao , benvenuto! Vai con /help per elenco opzioni";
+	
 }
 elseif(strpos($text, "/elenco") === 0)
 {
@@ -50,6 +47,7 @@ elseif(strpos($text, "/codfiscale") === 0)
 					    ['text' =>  'matteo', 'callback_data' => 'ZNLMTT99B26D530W'],
 					    ['text' =>  'nicola', 'callback_data' => 'ZNLNCL03E08D530R']]]];
         $response = "seleziona il nome per avere il codice fiscale";
+	$parameters["reply_markup"] = json_encode($keyboard, true);
 }
 elseif(strpos($text, "/datanascita") === 0)
 { 
@@ -58,6 +56,7 @@ elseif(strpos($text, "/datanascita") === 0)
 					    ['text' =>  'matteo', 'callback_data' => '26-02-1999'],
 					    ['text' =>  'nicola', 'callback_data' => '08-05-2003']]]];
         $response = "seleziona il nome per avere la data di nascita";
+	$parameters["reply_markup"] = json_encode($keyboard, true);
 }
 elseif(strpos($text, "stefano") === 0)
 { 
@@ -97,18 +96,17 @@ elseif(strpos($text, "/webcam") === 0)
 					    ['text' =>  'tomatico', 'url' => 'http://www.arifeltre.it/Cam1/webcam.jpg'],
 					    ['text' =>  'fiere', 'url' => 'http://www.arifeltre.it/Cam4/image/camera1.jpg']]]];
         $response = "scegli la webcam";
+	$parameters["reply_markup"] = json_encode($keyboard, true);
 }
 else 
 {
-	//exit;
-	//$response = "Comando non previsto. /help";
-	//$response = strtolower($text);
+	$response = "$$$";
 }
-$parameters = array('chat_id' => $chatId, "text" => $response);
+if ($response == "$$$")
+{	
+	$response = strtolower($text);
+	$parameters = array('chat_id' => $chatId, "text" => $response);
+}
 $parameters["method"] = "sendMessage";
-// imposto la keyboard
-if(strpos($text, "/webcam") === 0 || strpos($text, "/codfiscale") === 0 || strpos($text, "/datanascita") === 0)
-{
-	$parameters["reply_markup"] = json_encode($keyboard, true);
-}
+
 echo json_encode($parameters);
