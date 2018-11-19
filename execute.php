@@ -100,13 +100,7 @@ elseif(strpos($text, "/webcam") === 0)
 }
 else 
 {
-	$response = "$$$";
 }
-if ($response == "$$$")
-{}
-else
-{
-$parameters = array('chat_id' => $chatId, "text" => $response);	
 $parameters["method"] = "sendMessage";
+$parameters = array('chat_id' => $chatId, "text" => $response);	
 echo json_encode($parameters);
-}
