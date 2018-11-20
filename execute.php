@@ -99,6 +99,7 @@ elseif(strpos($text, "/webcam") === 0)
 }
 else 
 {
+	 $response = "scelta neutra";
 }
 $parameters["method"] = "sendMessage";
 $parameters = array('chat_id' => $chatId, "text" => $response);	
