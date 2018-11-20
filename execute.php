@@ -6,9 +6,6 @@ if(!$update)
   exit; 
 }
 $message = isset($update['message']) ? $update['message'] : "";
-//$query = isset($update['callback_query']) ? $update['callback_query'] : "";
-//$querymessage = isset($query['message']['text']) ? $query['message']['text'] : "";
-//$queryid =  isset($query['id']) ? $query['id'] : "";
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
 $firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
@@ -25,6 +22,9 @@ $response = '';
 //$parameters = array('callback_query_id' => $queryid);
 //echo json_encode($parameters);
 //$parameters = '';
+//$query = isset($update['callback_query']) ? $update['callback_query'] : "";
+//$querymessage = isset($query['message']['text']) ? $query['message']['text'] : "";
+//$queryid =  isset($query['id']) ? $query['id'] : "";
 
 if(strpos($text, "/start") === 0 || $text=="ciao" || $text=="gino" )
 {	
