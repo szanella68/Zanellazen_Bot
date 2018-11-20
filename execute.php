@@ -25,6 +25,9 @@ $text = isset($message['text']) ? $message['text'] : "";
 //echo json_encode($parameters);
 //$parameters = '';
 
+
+header("Content-Type: application/json");
+
 $text = trim($text);
 $text = strtolower($text);
 
@@ -104,11 +107,6 @@ else
 	 $response = "scelta neutra";
 }
 
-
-
-
-
-header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
