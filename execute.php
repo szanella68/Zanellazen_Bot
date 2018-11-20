@@ -108,5 +108,5 @@ else
 }
 $parameters["method"] = "sendMessage";
 $parameters = array('chat_id' => $chatId, "text" => $response);
-$parameters["reply_markup"] = json_encode($keyboard, true);
+//$parameters["reply_markup"] = json_encode($keyboard, true);
 echo json_encode($parameters);
