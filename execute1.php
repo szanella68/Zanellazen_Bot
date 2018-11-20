@@ -17,8 +17,17 @@ $text = trim($text);
 $text = strtolower($text);
 header("Content-Type: application/json");
 $response = '';
-if(strpos($text, "/start") === 0 || $text=="ciao")
-{
+//$parameters = '';
+//$parameters["method"] = "answerCallbackQuery";
+//$parameters = array('callback_query_id' => $queryid);
+//echo json_encode($parameters);
+//$parameters = '';
+//$query = isset($update['callback_query']) ? $update['callback_query'] : "";
+//$querymessage = isset($query['message']['text']) ? $query['message']['text'] : "";
+//$queryid =  isset($query['id']) ? $query['id'] : "";
+
+if(strpos($text, "/start") === 0 || $text=="ciao" || $text=="gino" )
+{	
 	$response = "Ciao , benvenuto! Vai con /help per elenco opzioni";
 }
 elseif(strpos($text, "/elenco") === 0)
@@ -26,7 +35,7 @@ elseif(strpos($text, "/elenco") === 0)
 	$response = "Stefano Zanella, Silvia Darugna, Matteo Zanella, Nicola Zanella";
 }
 elseif(strpos($text, "/help") === 0)
-{
+{ 
 	$response = "/help per questo help, /elenco per l'elenco famigliari, /codfiscale  per il codice fiscale,
 	/datanascita per le date di nascita, /webcam per l'elenco webcam,";
 }
@@ -37,6 +46,7 @@ elseif(strpos($text, "/codfiscale") === 0)
 					    ['text' =>  'matteo', 'callback_data' => 'ZNLMTT99B26D530W'],
 					    ['text' =>  'nicola', 'callback_data' => 'ZNLNCL03E08D530R']]]];
         $response = "seleziona il nome per avere il codice fiscale";
+	$parameters["reply_markup"] = json_encode($keyboard, true);
 }
 elseif(strpos($text, "/datanascita") === 0)
 { 
@@ -45,6 +55,7 @@ elseif(strpos($text, "/datanascita") === 0)
 					    ['text' =>  'matteo', 'callback_data' => '26-02-1999'],
 					    ['text' =>  'nicola', 'callback_data' => '08-05-2003']]]];
         $response = "seleziona il nome per avere la data di nascita";
+	$parameters["reply_markup"] = json_encode($keyboard, true);
 }
 elseif(strpos($text, "stefano") === 0)
 { 
@@ -84,18 +95,12 @@ elseif(strpos($text, "/webcam") === 0)
 					    ['text' =>  'tomatico', 'url' => 'http://www.arifeltre.it/Cam1/webcam.jpg'],
 					    ['text' =>  'fiere', 'url' => 'http://www.arifeltre.it/Cam4/image/camera1.jpg']]]];
         $response = "scegli la webcam";
+	$parameters["reply_markup"] = json_encode($keyboard, true);
 }
 else 
 {
-	//exit;
-	//$response = "Comando non previsto. /help";
-	//$response = strtolower($text);
+	 $response = "scelta neutra";
 }
-$parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
-// imposto la keyboard
-if(strpos($text, "/webcam") === 0 || strpos($text, "/codfiscale") === 0 || strpos($text, "/datanascita") === 0)
-{
-	$parameters["reply_markup"] = json_encode($keyboard, true);
-}
+$parameters = array('chat_id' => $chatId, "text" => $response);	
 echo json_encode($parameters);
