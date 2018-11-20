@@ -100,13 +100,13 @@ elseif(strpos($text, "/webcam") === 0)
 					    ['text' =>  'tomatico', 'url' => 'http://www.arifeltre.it/Cam1/webcam.jpg'],
 					    ['text' =>  'fiere', 'url' => 'http://www.arifeltre.it/Cam4/image/camera1.jpg']]]];
         $response = "scegli la webcam";
-	$parameters["reply_markup"] = json_encode($keyboard, true);
+	
 }
 else 
 {
 	 $response = "scelta neutra";
 }
-
-$parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
+$parameters = array('chat_id' => $chatId, "text" => $response);
+$parameters["reply_markup"] = json_encode($keyboard, true);
 echo json_encode($parameters);
