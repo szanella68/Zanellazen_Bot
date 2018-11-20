@@ -51,7 +51,6 @@ elseif(strpos($text, "/codfiscale") === 0)
 					    ['text' =>  'matteo', 'callback_data' => 'ZNLMTT99B26D530W'],
 					    ['text' =>  'nicola', 'callback_data' => 'ZNLNCL03E08D530R']]]];
         $response = "seleziona il nome per avere il codice fiscale";
-	$parameters["reply_markup"] = json_encode($keyboard, true);
 }
 elseif(strpos($text, "/datanascita") === 0)
 { 
@@ -60,7 +59,6 @@ elseif(strpos($text, "/datanascita") === 0)
 					    ['text' =>  'matteo', 'callback_data' => '26-02-1999'],
 					    ['text' =>  'nicola', 'callback_data' => '08-05-2003']]]];
         $response = "seleziona il nome per avere la data di nascita";
-	$parameters["reply_markup"] = json_encode($keyboard, true);
 }
 elseif(strpos($text, "stefano") === 0)
 { 
