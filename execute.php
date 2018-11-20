@@ -36,7 +36,7 @@ elseif(strpos($text, "/elenco") === 0)
 	$response = "Stefano Zanella, Silvia Darugna, Matteo Zanella, Nicola Zanella";
 }
 elseif(strpos($text, "/help") === 0)
-{
+{ 
 	$response = "/help per questo help, /elenco per l'elenco famigliari, /codfiscale  per il codice fiscale,
 	/datanascita per le date di nascita, /webcam per l'elenco webcam,";
 }
