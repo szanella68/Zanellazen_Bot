@@ -107,5 +107,8 @@ else
 
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
-//$parameters["reply_markup"] = json_encode($keyboard, true);
+if(strpos($text, "/codfiscale") === 0 || strpos($text, "/datanascita") === 0 || strpos($text, "/webcam") === 0)
+{
+$parameters["reply_markup"] = json_encode($keyboard, true);
+}
 echo json_encode($parameters);
