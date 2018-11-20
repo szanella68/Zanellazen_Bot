@@ -106,13 +106,8 @@ else
 }
 
 if(isset($message))
-{
-	if(isset($text)) { $response = "testo not nul"; } else { $response = "testo is null"; } 
-}
-else
-{
-	 $response = "message is null";
-}
+{ if(isset($text)) { $response = "testo not nul"; } else { $response = "testo is null"; } }
+else {  $response = "message is null"; }
 
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
