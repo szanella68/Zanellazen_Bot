@@ -30,7 +30,7 @@ $text = strtolower($text);
 
 if(strpos($text, "/start") === 0 || $text=="ciao" || $text=="gino" )
 {	
-	$response = "Ciao , benvenuto! Vai con /help per elenco opzioni";
+	//$response = "Ciao , benvenuto! Vai con /help per elenco opzioni";
 }
 elseif(strpos($text, "/elenco") === 0)
 {
