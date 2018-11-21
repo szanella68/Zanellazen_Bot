@@ -119,6 +119,10 @@ if(isset($message))
 { if(isset($text)) { $response = "testo not nul"; } else { $response = "testo is null"; } }
 else {  $response = "message is null"; }
 
+ if($querydata == "stefanocf"){
+   $response = "querydata stefanocf";
+ }
+
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
 if(strpos($text, "/codfiscale") === 0 || strpos($text, "/datanascita") === 0 || strpos($text, "/webcam") === 0)
