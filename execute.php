@@ -36,10 +36,6 @@ header("Content-Type: application/json");
 $text = trim($text);
 $text = strtolower($text);
 
- if($querydata == "stefanocf"){
-   $response = "querydata stefanocf";
- }
-
 
 if(strpos($text, "/start") === 0 || $text=="ciao" || $text=="gino" )
 {	
@@ -115,9 +111,9 @@ else
 	 $response = "scelta neutra";
 }
 
-if(isset($message))
-{ if(isset($text)) { $response = "testo not nul"; } else { $response = "testo is null"; } }
-else {  $response = "message is null"; }
+//if(isset($message))
+//{ if(isset($text)) { $response = "testo not nul"; } else { $response = "testo is null"; } }
+//else {  $response = "message is null"; }
 
  if($querydata == "stefanocf"){
    $response = "querydata stefanocf";
