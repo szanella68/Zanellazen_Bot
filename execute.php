@@ -114,8 +114,8 @@ else
 //{ if(isset($text)) { $response = "testo not nul"; } else { $response = "testo is null"; } }
 //else {  $response = "message is null"; }
 
- if($querydata == "stefanocf"){
-   $response = "querydata stefanocf";
+ if($querydata == "ZNLSFN68M06D530E"){
+   $response = "querydata stefanocf  ZNLSFN68M06D530E";
  }
 
 $parameters = array('chat_id' => $chatId, "text" => $response);
