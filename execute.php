@@ -19,9 +19,8 @@ $text = isset($message['text']) ? $message['text'] : "";
 $query = isset($update['callback_query']) ? $update['callback_query'] : "";
 $queryid =  isset($query['id']) ? $query['id'] : "";
 $queryUserId =  isset($query['from']['id']) ? $query['from']['id'] : "";
-$queryUserId =  isset($query['from']['username']) ? $query['from']['username'] : "";
+$queryusername =  isset($query['from']['username']) ? $query['from']['username'] : "";
 $querydata =  isset($query['data']) ? $query['data'] : "";
-$querymsgid =  isset($query['message']['message_id']) ? $query['message']['message_id'] : "";
 $querymsgid =  isset($query['message']['message_id']) ? $query['message']['message_id'] : "";
 
 $inlinequery = isset($update['inlinequery']) ? $update['inlinequery'] : "";
