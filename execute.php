@@ -15,14 +15,19 @@ $lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name']
 $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
 $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
+ 
+$query = isset($update['callback_query']) ? $update['callback_query'] : "";
+$queryid =  isset($query['id']) ? $query['id'] : "";
+$queryUserId =  isset($query['from']['id']) ? $query['from']['id'] : "";
+$queryUserId =  isset($query['from']['username']) ? $query['from']['username'] : "";
+$querydata =  isset($query['data']) ? $query['data'] : "";
+$querymsgid =  isset($query['message']['message_id']) ? $query['message']['message_id'] : "";
+$querymsgid =  isset($query['message']['message_id']) ? $query['message']['message_id'] : "";
 
-//$query = isset($update['callback_query']) ? $update['callback_query'] : "";
-//$querymessage = isset($query['message']['text']) ? $query['message']['text'] : "";
-//$queryid =  isset($query['id']) ? $query['id'] : "";
-//$parameters = '';
-//$parameters["method"] = "answerCallbackQuery";
-//$parameters = array('callback_query_id' => $queryid);
-//echo json_encode($parameters);
+$inlinequery = isset($update['inlinequery']) ? $update['inlinequery'] : "";
+$inlineid =  isset($inlinequery['id']) ? $inlinequery['id'] : "";
+$inlineUserId =  isset($inlinequery['from']['id']) ? $inlinequery['from']['id'] : "";
+$inlinequerydata =  isset($inlinequery['query']) ? $inlinequery['query'] : "";
 //$parameters = '';
 
 
